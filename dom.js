@@ -1,15 +1,17 @@
 console.log('hi')
 
 var button = document.body.querySelector("button");
-var newDiv = document.createElement('div');
 var totalNotes = document.querySelector("input");
-var main = document.querySelector('#main');
 
 var addNote = function() {
-  console.log('clicked button');
+  var main = document.querySelector('#main');
+  var newDiv = document.createElement('div');
+  newDiv.classList.add('card');
+  newDiv.textContent = "click to edit";
+  main.appendChild(newDiv).contentEditable = true;
   updateTotal();
-  main.appendChild(newDiv).classList.add('card').textContent = "new sticky";
   }
+
 button.addEventListener("click", addNote);
 
 var updateTotal = function() {
