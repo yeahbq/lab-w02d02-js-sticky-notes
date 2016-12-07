@@ -9,8 +9,13 @@ body {
   border: 2px solid black;
   margin: 20px;
   display: inline-block;
+  border-radius: 5px;
 }
 
 button {
-  display: inline-block;
+/*  display: inline-block;
+*/}
+
+button:hover {
+  cursor: pointer;
 }
