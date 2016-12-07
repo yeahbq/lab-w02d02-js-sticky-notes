@@ -33,8 +33,22 @@ button:hover {
 .exit:hover {
   color: red;
   transition: .5s;
+  cursor: pointer;
 }
 
 div {
   overflow: auto;
 }
+
+.card:active {
+  background: goldenrod;
+  opacity: 80%;
+  text-transform: none;
+}
+/*
+ [contentEditable=true]:empty:not(:focus):before {
+        content:attr(data-ph);
+        color: grey;
+    }
+
+*/

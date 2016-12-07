@@ -1,23 +1,48 @@
 console.log('hi')
 
+var main = document.querySelector('#main');
 var button = document.body.querySelector("button");
 var totalNotes = document.querySelector("input");
+// var card = document.querySelector("div");
+
+
+var exit = function(event) {
+  event.target.parentNode.remove();
+  console.log('clicked on span', event.target)
+}
+
+var clickedCard = function(event){
+  if (event.target.value === "click to edit") {
+  console.log("clicked in card", event)
+  event.target.textContent = "";
+  }
+}
 
 var addNote = function() {
-  var main = document.querySelector('#main');
   var newDiv = document.createElement('div');
   var span = document.createElement('span');
+
   newDiv.classList.add('card');
   span.classList.add('exit');
-  newDiv.textContent = "click to edit";
-  span.textContent = 'x';
-  main.appendChild(newDiv).contentEditable = true;
-  newDiv.appendChild(span);
 
+  span.textContent = 'x';
+  newDiv.textContent = "click to edit";
+
+  main.appendChild(newDiv).contentEditable = true;
+  newDiv.appendChild(span).contentEditable = false;
+
+  span.addEventListener("click", exit);
+
+
+  document.querySelector('.card').focus();
+
+  // newDiv.setAttribute('data-ph', 'Write a new note!');
   updateTotal();
   }
 
 button.addEventListener("click", addNote);
+
+// card.addEventListener("click", clickedCard);
 
 var updateTotal = function() {
   totalNotes.value = document.querySelectorAll('.card').length
@@ -26,12 +51,7 @@ var updateTotal = function() {
 // button.addEventListener('click', #)
 //function to click x to close box
 
-// var exit = function() {
-//   if (span.classList.contains('exit') {
-//     span.parentNode.remove();
-//   }
-// }
 
-// span.addEventListener("click", exit);
+
 
 
