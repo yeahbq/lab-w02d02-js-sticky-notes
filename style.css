@@ -19,3 +19,22 @@ button {
 button:hover {
   cursor: pointer;
 }
+
+.exit {
+  margin: 5px 6px 0 0;
+  border: 2px solid black;
+  background: black;
+  color: white;
+  float: right;
+  display: inline-block;
+  border-radius: 2px;
+}
+
+.exit:hover {
+  color: red;
+  transition: .5s;
+}
+
+div {
+  overflow: auto;
+}
